@@ -38,11 +38,13 @@ const createBoxes = (amount) => {
   boxContainer.append(...boxes);
 };
 
+const destroyBoxes = () => {
+  boxContainer.innerHTML = "";
+};
+
 createBtn.addEventListener("click", () => {
   const amount = amountField.value;
   createBoxes(amount);
 });
 
-destroyBtn.addEventListener("click", () => {
-  boxContainer.innerHTML = "";
-});
+destroyBtn.addEventListener("click", destroyBoxes);
